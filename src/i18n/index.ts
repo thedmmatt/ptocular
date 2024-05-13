@@ -1,13 +1,14 @@
 import { createI18n } from 'vue-i18n';
 import de from './locales/de.json';
 import en from './locales/en.json';
+import br from './locales/br.json';
 
 export type MessageSchema = typeof en;
 
 const browserLocale = navigator.language.slice(0, 2).toLowerCase();
-const messages: Record<string, MessageSchema> = { en, de } as const;
+const messages: Record<string, MessageSchema> = { en, de, br } as const;
 
-export const availableLocales = ['en', 'de'];
+export const availableLocales = ['en', 'de', 'br'];
 export const initialLocale = availableLocales.includes(browserLocale) ? browserLocale : 'en';
 
 export type AvailableLocale = keyof typeof messages;
